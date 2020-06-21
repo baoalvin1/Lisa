@@ -133,19 +133,17 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         let number = Int.random(in: 0 ... 3)
         let joke = ["I don't trust stairs. They're always up to something.", "Did you hear the rumor about butter? Well, I'm not going to spread it!", "If you see a crime at an Apple Store, does that make you an iWitness?", "5/4 of people admit that they’re bad with fractions"]
         DispatchQueue.main.async { // Correct
-           self.lisaField.text = joke[number]
+            self.lisaField.text = joke[number]
+            self.readText()
         }
-        let utterance = AVSpeechUtterance(string: self.lisaField.text!)
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
+       
     }
     func greeting() {
         DispatchQueue.main.async { // Correct
-           self.lisaField.text = "Hello"
+            self.lisaField.text = "Hello"
+            self.readText()
         }
-        let utterance = AVSpeechUtterance(string: self.lisaField.text!)
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
+        
     }
     func readFacebook() {
         let session = URLSession.shared
@@ -202,13 +200,27 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! PostViewController
-        vc.aT = AccessToken.current
-        print(self.postText1)
-        vc.getPostText = self.postText1
+        if (segue.identifier == "toPost"){
+            var vc = segue.destination as! PostViewController
+            vc.aT = AccessToken.current
+            print(self.postText1)
+            vc.getPostText = self.postText1
+        } else if (segue.identifier == "toSettings") {
+            var vc = segue.destination as! SettingsViewController
+            vc.aT = AccessToken.current
+        }
+            
     }
     func readText() {
-        let utterance = AVSpeechUtterance(string: self.textField.text!)
+//        do {
+//            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+//            try AVAudioSession.sharedInstance().setActive(true)
+//        } catch {
+//            print(error)
+//            print("hey")
+//        }
+        let utterance = AVSpeechUtterance(string: self.lisaField.text!)
+        utterance.volume = 1.0
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }

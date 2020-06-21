@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DV8-yB-rLe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DV8-yB-rLe">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -35,6 +35,9 @@
                                 <rect key="frame" x="326" y="818" width="22" height="22"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" image="gear" catalog="system"/>
+                                <connections>
+                                    <segue destination="JLN-ja-3Y1" kind="presentation" identifier="toSettings" modalPresentationStyle="fullScreen" id="csh-7g-dcz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXg-8Y-zvi">
                                 <rect key="frame" x="72.333333333333329" y="818" width="19.666666666666671" height="22"/>
@@ -77,6 +80,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1724.6376811594205" y="129.91071428571428"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="eti-Ow-qJ7">
+            <objects>
+                <viewController id="JLN-ja-3Y1" customClass="SettingsViewController" customModule="Lisa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jeU-IU-Act">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6R-uZ-o9f">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="cQb-DM-t0g">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Amt-6s-GY4">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="presentation" id="0N3-Jt-LfZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKb-Xz-eeU">
+                                <rect key="frame" x="180" y="373" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="JLN-ja-3Y1" eventType="touchUpInside" id="QLZ-LN-s1A"/>
+                                    <segue destination="DV8-yB-rLe" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="knK-t8-j1r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oKb-Xz-eeU" firstAttribute="top" secondItem="z6R-uZ-o9f" secondAttribute="bottom" constant="285" id="PXA-JW-nbO"/>
+                            <constraint firstItem="z6R-uZ-o9f" firstAttribute="trailing" secondItem="MmW-ZZ-Bo3" secondAttribute="trailing" id="QYW-dg-6zc"/>
+                            <constraint firstItem="oKb-Xz-eeU" firstAttribute="leading" secondItem="MmW-ZZ-Bo3" secondAttribute="leading" constant="180" id="aNP-Ps-SKa"/>
+                            <constraint firstItem="z6R-uZ-o9f" firstAttribute="leading" secondItem="MmW-ZZ-Bo3" secondAttribute="leading" id="gFh-vT-aNm"/>
+                            <constraint firstItem="MmW-ZZ-Bo3" firstAttribute="trailing" secondItem="oKb-Xz-eeU" secondAttribute="trailing" constant="179" id="hBd-0c-8qO"/>
+                            <constraint firstItem="z6R-uZ-o9f" firstAttribute="top" secondItem="MmW-ZZ-Bo3" secondAttribute="top" id="nAB-29-DhR"/>
+                            <constraint firstItem="MmW-ZZ-Bo3" firstAttribute="bottom" secondItem="oKb-Xz-eeU" secondAttribute="bottom" constant="410" id="pAA-Ax-2CJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MmW-ZZ-Bo3"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="Amt-6s-GY4" id="315-Kj-xC6"/>
+                        <outlet property="logoutButton" destination="oKb-Xz-eeU" id="bIJ-CV-PPq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-zl-tLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3018.840579710145" y="-221.65178571428569"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="lcd-Nc-gwa">
@@ -146,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWG-wU-wNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2766.666666666667" y="128.57142857142856"/>
+            <point key="canvasLocation" x="3029" y="479"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="oil-QZ-xJU">
@@ -193,6 +248,9 @@
             <point key="canvasLocation" x="811.59420289855075" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0N3-Jt-LfZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.turn.up.right" catalog="system" width="128" height="106"/>
         <image name="gear" catalog="system" width="128" height="119"/>

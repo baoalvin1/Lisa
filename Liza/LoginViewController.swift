@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 1.5, delay: 2.0, options: .curveEaseOut, animations: {self.loginButton.alpha = 1.0})}
         
     }
-    private func updateButton(isLoggedIn: Bool) {
+    func updateButton(isLoggedIn: Bool) {
         // 1
         let title = isLoggedIn ? "Continue with Facebook" : "Log in with Facebook"
         loginButton.setTitle(title, for: .normal)
@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
             // Perform log out
             self.performSegue(withIdentifier: "toHome", sender: self)
                // 2
-               loginManager.logOut()
+               //loginManager.logOut()
                updateButton(isLoggedIn: false)
                
            } else {

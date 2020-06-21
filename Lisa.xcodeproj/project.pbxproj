@@ -18,6 +18,7 @@
 		930FD2B8247B28F10013E03E /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 930FD2B7247B28F10013E03E /* FacebookShare */; };
 		930FD2BA247C42440013E03E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930FD2B9247C42440013E03E /* LoginViewController.swift */; };
 		934FCDCE2482FD8A00BE01BA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934FCDCD2482FD8A00BE01BA /* PostViewController.swift */; };
+		93E12D1B249FD1E3005CBB08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E12D1A249FD1E3005CBB08 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		93003624247201BB00209B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930FD2B9247C42440013E03E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		934FCDCD2482FD8A00BE01BA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		93E12D1A249FD1E3005CBB08 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				9300361F247201BB00209B38 /* Assets.xcassets */,
 				93003621247201BB00209B38 /* LaunchScreen.storyboard */,
 				93003624247201BB00209B38 /* Info.plist */,
+				93E12D1A249FD1E3005CBB08 /* SettingsViewController.swift */,
 			);
 			path = Liza;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				93003617247201B600209B38 /* AppDelegate.swift in Sources */,
 				93003619247201B600209B38 /* SceneDelegate.swift in Sources */,
 				934FCDCE2482FD8A00BE01BA /* PostViewController.swift in Sources */,
+				93E12D1B249FD1E3005CBB08 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
